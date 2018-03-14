@@ -1,4 +1,6 @@
 #include <stdio.h>
+#include <stdlib.h>
+#include <unistd.h> 
 #include <time.h>
 
 #define quant 36000
@@ -24,7 +26,7 @@ int main()
 		}
 	}
 
-	_sleep(1500);
+	sleep(1500);
 	srand(time(NULL));
 
 	for (i = 0; i < dados; i++)
@@ -41,9 +43,11 @@ int main()
 		res_pos[x] = cont[x]++;
 	}
 
-	for (i = dados; i <= (facces * dados); i++)
+	for (i = dados; i <= (faces * dados); i++)
 	{
 		printf("Resultado %d = %d + %2.2f%%\n", i, cont[i], (float)cont[i]/quant*100 );
 	}
+    
+    //getche();
 	return 0;
 }
